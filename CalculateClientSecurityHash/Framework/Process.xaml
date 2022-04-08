@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,7 +74,8 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="376.8,2327.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -97,7 +98,7 @@
         <OutArgument x:TypeArguments="sd:DataRow">[out_workItem]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataRow">[in_dtWorkItem(in_TransactionNumber)]</InArgument>
+        <InArgument x:TypeArguments="sd:DataRow">[in_dtWorkItem(in_TransactionNumber-1)]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Work Item ID Wise" sap:VirtualizedContainerService.HintSize="335.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -108,28 +109,18 @@
         <InArgument x:TypeArguments="x:String">[out_workItem("WIID").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="WIID Found" sap:VirtualizedContainerService.HintSize="335.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;WIID:&quot;+ out_WIID.ToString.Trim]" />
+    <ui:LogMessage DisplayName="WIID Found" sap:VirtualizedContainerService.HintSize="335.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;WIID:&quot;+ out_WIID.ToString.Trim]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate To Work Item Details" sap:VirtualizedContainerService.HintSize="335.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ACME\ACME_Navigateto_WIDetails.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_WIID">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CINT(out_WIID)" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_WIID">[CINT(out_WIID)]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="For each activity of the WI5 type, perform the following steps:&#xA;Open the Details page of the selected activity to retrieve the Client Information Details" DisplayName="Extract Client Information" sap:VirtualizedContainerService.HintSize="335.2,189.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ACME\ACME_ExtractClientInformation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientID">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ClientID" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientName">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ClientName" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientCountry">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ClientCountry" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientID">[ClientID]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientName">[ClientName]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ClientCountry">[ClientCountry]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -162,12 +153,8 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="335.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Client ID:&quot;+out_ClientID]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Open the SHA1 Online webpage and provide the following input: [ClientID]-&#xA;[ClientName]-[ClientCountry]. Replace all the variables with the corresponding values." DisplayName="SHA1 Get Hash Code" sap:VirtualizedContainerService.HintSize="335.2,189.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SHA1Online\SHA1_GetHashCode.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_HashID">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="HashID" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_HashID">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="HashResult" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_HashID">[HashID]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_HashID">[HashResult]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -190,12 +177,8 @@
     </Assign>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Set the status to “Completed”. Add a comment with the obtained [SecurityHash]." DisplayName="ACME Update Work Item" sap:VirtualizedContainerService.HintSize="335.2,157.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ACME\ACME_UpdateWorkItem.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_comment">
-          <Literal x:TypeArguments="x:String">Completed</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_status">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="HashResult" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_comment">[HashResult]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_status">Completed</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

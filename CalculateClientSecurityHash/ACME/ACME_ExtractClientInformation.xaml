@@ -129,7 +129,7 @@
                 <InArgument x:TypeArguments="x:String">[ClientInformation.Substring(ClientInformation.IndexOf("Client Country: ") + "Client Country: ".Length).Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[out_ClientID + &quot;-&quot; + out_ClientName + &quot;-&quot; + out_ClientCountry]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[out_ClientID + &quot;-&quot; + out_ClientName + &quot;-&quot; + out_ClientCountry]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

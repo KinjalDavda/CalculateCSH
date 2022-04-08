@@ -1,0 +1,15 @@
+{
+ "ACME URL" : "https:\/\/acme-test.uipath.com\/",
+ "SHA1 URL" : "http:\/\/www.sha1-online.com\/",
+ "ConfigFile_Asset" : "ConfigFile_Asset",
+ "ACMECredentials" : "ACME_Credentials",
+  "SummaryMailCredential" : "SummaryMail_Credential",
+ "Summary_Distributor" : "Kinjal33@gmail.com",
+ "Status_Mail_Subject" : "Calculate Client Security Hash",
+ "Summary_Distributor_CC" : "Kinjal33@gmail.com",
+ "Bot_ID" : "123",
+ "WorkItem_Type" : "WI5",
+ "WorkItem_Status" : "Open",
+  "RetryNumber" : "1"
+ 
+ }

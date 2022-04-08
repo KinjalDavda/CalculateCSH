@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AnyzxNwg8beKdTCLV+XAByWjqQMXzl2RyzgZ2YY5cISRqV3J3ZUQlEEKN2xUIuBp5/t6jYha1uImO451eAxLyw==",
+  "dgSpecHash": "xHemSpGVV02RqOP4l516MHSdYE/ouRdKqmNxtDikC0vU7cD0xQ5gUhBnNhUsGfgSIeu7uz6N99Ydi3JN2ViCXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Downloads\\CalculateClientSecurityHash\\CalculateClientSecurityHash\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\avalonedit\\6.0.1\\avalonedit.6.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\credentialmanagement\\1.0.2\\credentialmanagement.1.0.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
@@ -62,6 +63,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\nito.disposables\\2.2.0\\nito.disposables.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\npoi\\2.4.1\\npoi.2.4.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\restsharp\\106.6.10\\restsharp.106.6.10.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\sharpziplib\\1.2.0\\sharpziplib.1.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
@@ -98,7 +100,8 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.testing.activities\\1.4.6\\uipath.testing.activities.1.4.6.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.5\\uipath.uiautomation.activities.21.10.5.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.vision\\3.1.4\\uipath.vision.3.1.4.nupkg.sha512"
+    "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.vision\\3.1.4\\uipath.vision.3.1.4.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\uipath.webapi.activities\\1.9.2\\uipath.webapi.activities.1.9.2.nupkg.sha512"
   ],
   "logs": []
 }
