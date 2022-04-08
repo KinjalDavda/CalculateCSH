@@ -859,8 +859,8 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Comment sap:VirtualizedContainerService.HintSize="783.2,113.6" sap2010:WorkflowViewState.IdRef="Comment_4" Text="Initialization of the execution&#xA;- Kills all processes which will be acquired during execution&#xA;- Loads configuration file in dictionary" />
-              <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="783.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <ui:Comment sap:VirtualizedContainerService.HintSize="783.2,113.6" sap2010:WorkflowViewState.IdRef="Comment_4" Text="Initialization of the execution&#xA;- Kills all processes which will be acquired during execution&#xA;- Loads configuration file in dictionary..&#xD;&#xA;" />
+              <Assign DisplayName="SystemException (initialization)" sap:VirtualizedContainerService.HintSize="783.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:Exception">[obj_Exception]</OutArgument>
                 </Assign.To>
