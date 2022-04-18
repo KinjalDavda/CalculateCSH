@@ -1,4 +1,8 @@
 {
+ "HookURL" : "https://api-dev.e5.ai",
+ "Hook Credential" : "Hook_Credential",
+  "Process Name" : "Calculate Client Security Hash",
+"Task Name" : "Calculate Client Security Hash", 
  "ACME URL" : "https:\/\/acme-test.uipath.com\/",
  "SHA1 URL" : "http:\/\/www.sha1-online.com\/",
  "ConfigFile_Asset" : "ConfigFile_Asset",
@@ -11,5 +15,6 @@
  "WorkItem_Type" : "WI5",
  "WorkItem_Status" : "Open",
   "RetryNumber" : "1"
+
  
  }
