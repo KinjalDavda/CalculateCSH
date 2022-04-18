@@ -110,9 +110,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="** Scrape transactional data required for processing. It might be mail/ excel/ website/ SAP." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="250.4,130.4" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="** Scrape transactional data required for processing. It might be mail/ excel/ website/ SAP. ." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="648,2548.8" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="603.2,2097.6" sap2010:WorkflowViewState.IdRef="TryCatch_18">
+        <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="603.2,2128.8" sap2010:WorkflowViewState.IdRef="TryCatch_18">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -120,14 +120,14 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Process the Current Mail" sap:VirtualizedContainerService.HintSize="566.4,1457.6" sap2010:WorkflowViewState.IdRef="Sequence_76">
+            <Sequence DisplayName="Process the Current Mail" sap:VirtualizedContainerService.HintSize="566.4,1488.8" sap2010:WorkflowViewState.IdRef="Sequence_76">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="524.8,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="Multiple Assign" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="524.8,195.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -160,6 +160,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
@@ -388,7 +389,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="1019.2,6675.2" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="230.4,194.4" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="974.4,6226.4" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
